@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>互动多媒体系统-中控视频</title>
+
+    <link rel="stylesheet" href="css/inc.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body ondragstart="return false" onselect="return false" onselectstart="return false" oncontextmenu="return false">
+<div id="CC" style="transform:scale(0.3); transform-origin: top left;">
+    <!-- style="transform:scale(0.5); transform-origin: top left;" -->
+    <div id="_unable"></div>
+
+    <!--Public-->
+    <section class="cc" id="Loader">
+        <img src="../../assets/img/loader.svg" width="88" alt="">
+        <div class="word"></div>
+    </section>
+
+    <section class="cc" id="Index">
+        <img src="../../uploads/v.png" width="5760" height="1080"/>
+    </section>
+
+    <section class="cc" id="Video">
+        <video width="5760" height="1080" src="../../uploads/v.mp4"></video>
+    </section>
+
+</div>
+</body>
+<!--基础插件-->
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script src="lib/underscore.js"></script>
+<script src="lib/velocity/velocity.js"></script>
+<script src="lib/ws.js"></script>
+<script src="lib/ws_io.js"></script>
+
+<script src="lib/zh.js"></script>
+<script src="lib/zh_media.js"></script>
+
+<!--主程序-->
+<script src="../../assets/config.js"></script>
+<script src="js/init.js"></script>
+<!--<script src="js/server.js"></script>-->
+<!--<script src="js/mp3.js"></script>-->
+
+<!--模块程序-->
+<script src="js/index.js"></script>
+
+<script>
+    $(window).load(()=>init.loader());
+    document.getElementById("CC").addEventListener('touchmove', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+    });
+</script>
+</html>
